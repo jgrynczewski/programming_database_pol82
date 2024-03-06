@@ -1,10 +1,10 @@
 from mysql.connector import connect
-from mysql.connector import MySQLConnection
 
 USER = 'root'
 PASSWORD = 'admin'
 
+CREATE_DATABASE_QUERY = """CREATE DATABASE shop2;"""
 
 with connect(user=USER, password=PASSWORD) as cnx:
     with cnx.cursor() as cursor:
-        cursor.execute("""CREATE DATABASE shop2;""")
+        cursor.execute(CREATE_DATABASE_QUERY)
