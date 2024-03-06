@@ -1,3 +1,4 @@
+# exceptions handling
 import mysql.connector
 from mysql.connector import connect, errorcode
 

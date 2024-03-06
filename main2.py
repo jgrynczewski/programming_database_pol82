@@ -1,3 +1,4 @@
+# using context managers
 from mysql.connector import connect
 
 USER = 'root'
