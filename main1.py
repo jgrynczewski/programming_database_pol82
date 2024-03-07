@@ -1,4 +1,4 @@
-# basic
+# 1. Stwórz nową bazę danych o nazwie 'shop'.
 from mysql.connector import connect
 
 USER = 'root'

@@ -5,7 +5,7 @@ from mysql.connector import connect, errorcode
 USER = 'root'
 PASSWORD = 'admin'
 
-CREATE_DATABASE_QUERY = """CREATE DATABASE IF NOT EXISTS shop2;"""
+CREATE_DATABASE_QUERY = """CREATE DATABASE IF NOT EXISTS shop;"""
 
 try:
     with connect(user=USER, password=PASSWORD) as cnx:
