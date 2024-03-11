@@ -6,6 +6,7 @@
 # 1,4,2,'2024-03-07'
 # 2,5,1,'2024-03-08'
 
+import datetime
 import mysql.connector
 from mysql.connector import connect, errorcode
 
@@ -19,11 +20,11 @@ INSERT INTO order_detail(client_id, product_id, quantity, order_date) VALUE
 """
 
 ORDERS = [
-    (4, 1, 3, '2024-03-04'),
-    (2, 6, 2, '2024-03-05'),
-    (3, 2, 1, '2024-03-06'),
-    (4, 7, 2, '2024-03-07'),
-    (2, 5, 1, '2024-03-08')
+    (4, 1, 3, datetime.date(2024, 3, 4)),
+    (2, 6, 2, datetime.date(2024, 3, 5)),
+    (3, 2, 1, datetime.date(2024, 3, 6)),
+    (4, 7, 2, datetime.date(2024, 3, 7)),
+    (2, 5, 1, datetime.date(2024, 3, 8))
 ]
 
 try:
