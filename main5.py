@@ -46,6 +46,8 @@ try:
             cursor.execute(INSERT_CLIENT_3)
             cursor.execute(INSERT_CLIENT_4)
             cursor.execute(INSERT_CLIENT_5)
+
+            # obowiązkowo dla DML
             cnx.commit()
 
 except mysql.connector.Error as err:

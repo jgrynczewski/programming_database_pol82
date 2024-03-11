@@ -63,6 +63,9 @@ try:
             cursor.execute(CREATE_PRODUCT_TABLE)
             cursor.execute(CREATE_ORDER_DETAIL_TABLE)
 
+            # opcjonalnie dla DDL
+            cnx.commit()
+
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print("Something is wrong with your username or password.")
