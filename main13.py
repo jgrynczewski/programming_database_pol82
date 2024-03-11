@@ -1,4 +1,4 @@
-# DQL - fetchone()
+# DQL - cursor as an iterator
 # 7. Wykonaj zapytanie SQL wyświetlające wszystkie wpisy z tabeli 'client'.
 
 import datetime
@@ -15,10 +15,9 @@ try:
     with connect(user=USER, password=PASSWORD, database=DB) as cnx:
         with cnx.cursor(dictionary=True) as cursor:
             cursor.execute(stmt)
-            result = cursor.fetchone()
-            while result:
-                print(result)
-                result = cursor.fetchone()
+
+            for row in cursor:
+                print(row)
 
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:

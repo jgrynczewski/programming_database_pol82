@@ -1,3 +1,4 @@
+# DQL - fetchall()
 # 7. Wykonaj zapytanie SQL wyświetlające wszystkie wpisy z tabeli 'client'.
 
 import datetime
