@@ -8,7 +8,7 @@ from sqlalchemy import text
 
 
 # napis połączeniowy (ang. connection string)
-conn_str = "mysql+mysqlconnector://'root':avdwsdmin@localhost"
+conn_str = "mysql+mysqlconnector://root:admin@localhost"
 
 engine = create_engine(conn_str)
 
