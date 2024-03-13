@@ -1,4 +1,5 @@
-# Zadanie 4: Aktualizacja danych (dml)  funckja update
+# SQLAlchemy Expression Language (U z CRUD dla DML) funckja update
+# Zadanie 4: Aktualizacja danych (dml)
 #
 # Zaktualizuj pensję użytkownika o id=4 z tabeli "employee" na 6000.
 
