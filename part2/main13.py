@@ -1,8 +1,7 @@
 # SQLAlchemy Expression Language (R z CRUD dla DQL) funkcja select
-# Zadanie 5: Usuwanie danych
+# Zadanie 6: Wykonywanie zapytań
 #
-# Usuń pracownika o id=3 z tabeli "employee".
-
+# Wykonaj zapytanie SELECT na tabeli "employee" i wyświetl wyniki.
 
 
 from sqlalchemy import create_engine, select

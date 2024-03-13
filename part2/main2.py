@@ -30,7 +30,7 @@ engine = create_engine(conn_str)
 metadata.create_all(engine)
 
 # DROP TABLE (D z CRUD dla DDL)
-# metadata.create_all(engine)
+# metadata.drop_all(engine)
 print("Done.")
 
 # ALTER TABLE (U z CRUD dla DDL)

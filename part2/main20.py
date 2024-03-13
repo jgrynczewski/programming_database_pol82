@@ -1,7 +1,7 @@
-# SQLAlchemy Expression Language (R z CRUD dla DQL) funkcja select, mappings
-# Zadanie 5: Usuwanie danych
+# SQLAlchemy Expression Language (R z CRUD dla DQL) metoda select obiektu klasy Table
+# Zadanie 6: Wykonywanie zapytań
 #
-# Usuń pracownika o id=3 z tabeli "employee".
+# Wykonaj zapytanie SELECT na tabeli "employee" i wyświetl wyniki.
 
 
 
@@ -13,14 +13,12 @@ from tables import employee_table
 conn_str = "mysql+mysqlconnector://root:admin@localhost/company_db"
 engine = create_engine(conn_str, echo=True)
 
-stmt = select(employee_table)
+stmt = employee_table.select()
 
 with engine.connect() as conn:
     cursor_result = conn.execute(stmt)  # <class 'sqlalchemy.engine.cursor.CursorResult'>
-    mapping_result = cursor_result.mappings()  # <class 'sqlalchemy.engine.result.MappingResult'>
 
-    for mapping in mapping_result:
-        print(f"({mapping['id']}) {mapping.get('first_name')} {mapping.get('last_name')} - {mapping.get('position')} [{mapping.get('salary')}]")
-
+    for row in cursor_result:
+        print(f"({row.id}) {row.first_name} {row.last_name} - {row.position} [{row.salary}]")
 
 print("Done.")
