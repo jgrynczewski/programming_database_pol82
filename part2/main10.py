@@ -1,4 +1,4 @@
-# Zadanie 4: Aktualizacja danych (dml)  funckja update
+# Zadanie 4: Aktualizacja danych (dml)  metoda update obiektu klasy Table
 #
 # Zaktualizuj pensję użytkownika o id=4 z tabeli "employee" na 6000.
 
@@ -11,7 +11,7 @@ from tables import employee_table
 conn_str = "mysql+mysqlconnector://root:admin@localhost/company_db"
 engine = create_engine(conn_str, echo=True)
 
-stmt = update(employee_table).values(salary=6000).where(employee_table.c.id == 4)
+stmt = employee_table.update().values(salary=6000).where(employee_table.c.id == 4)
 
 with engine.connect() as conn:
     conn.execute(stmt)
