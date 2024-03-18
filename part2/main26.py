@@ -1,5 +1,4 @@
-# SQLAlchemy Expression Language (C z CRUD dla DML)  Funkcja insert
-# Zadanie 3: Wstawianie danych (dml)
+# Zadanie 11 : Wstawianie danych (dml)
 #
 # Dodaj co najmniej trzy rekordy do tabeli "employee".
 # Przykładowe dane:
@@ -7,7 +6,10 @@
 # {'first_name': 'Jane', 'last_name': 'Smith', 'position': 'Developer', 'salary': 4000.00},
 # {'first_name': 'Alice', 'last_name': 'Johnson', 'position': 'HR', 'salary': 4500.00}
 
-#
+# Dodaj co najmniej trzy rekordy do tabeli "department".
+# Przykładowe dane:
+# {'name':'HR', 'manager_id': 2},
+# {'name':'IT', 'manager_id': 3}
 
 from sqlalchemy import create_engine, insert, update
 
