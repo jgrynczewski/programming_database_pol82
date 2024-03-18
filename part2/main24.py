@@ -12,10 +12,21 @@ conn_str = "mysql+mysqlconnector://root:admin@localhost/company_db"
 engine = create_engine(conn_str, echo=True)  # lazy initialization (leniwe inicjalizowanie)
 
 # Sposób I (na bazie funkcji select)
-# stmt = select(employee_table.c.position, func.count()).group_by(employee_table.c.position)
+stmt = select(
+    employee_table.c.position,
+    func.count()
+).group_by(
+    employee_table.c.position
+)
 
 # Sposób II (na bazie metody select)
-stmt = employee_table.select().with_only_columns(employee_table.c.position, func.count()).group_by(employee_table.c.position)
+stmt = employee_table.select(
+).with_only_columns(
+    employee_table.c.position,
+    func.count()
+).group_by(
+    employee_table.c.position
+)
 
 with engine.connect() as conn:
     cursor_result = conn.execute(stmt)  # <class 'sqlalchemy.engine.cursor.CursorResult'>
