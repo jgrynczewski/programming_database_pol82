@@ -7,9 +7,9 @@
 # {'first_name': 'Jane', 'last_name': 'Smith', 'position': 'Developer', 'salary': 4000.00},
 # {'first_name': 'Alice', 'last_name': 'Johnson', 'position': 'HR', 'salary': 4500.00}
 
-from sqlalchemy import create_engine, text
-
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from models import Employee
 
 # napis połączeniowy (ang. connection string)
@@ -21,16 +21,24 @@ e2 = Employee(first_name='Jane', last_name='Smith', position='Developer', salary
 e3 = Employee(first_name='Alice', last_name='Johnson', position='HR', salary=4500.00)
 
 Session = sessionmaker(bind=engine)
-session = Session()
 
 # można tak
+# session = Session()
 # session.add(e1)
 # session.add(e2)
 # session.add(e3)
 # session.commit()
+# session.close()
 
-# a można tak
-session.add_all([e1, e2, e3])
-session.commit()
+# ale lepiej tak
+# with Session() as session:
+#     session.add(e1)
+#     session.add(e2)
+#     session.add(e3)
+
+# albo tak
+with Session() as session:
+    session.add_all([e1, e2, e3])
+    session.commit()
 
 print("Done.")
